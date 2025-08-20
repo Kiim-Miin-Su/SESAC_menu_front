@@ -1,0 +1,220 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+main {
+    padding: 20px;
+}
+
+.select_options {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.random {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.result_container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: first-start;
+}
+
+.result_list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+    width: 100%;
+}
+
+.result_item {
+    /* 고정 width가 남는 공간을 만들 수 있음 → 유연하게 */
+    flex: 1 1 360px;
+    /* 기본 카드폭(예: 360px), 공간되면 늘고 없으면 줄기 */
+    max-width: 550px;
+    /* 카드가 너무 넓어지지 않게 상한 */
+    border: 1px solid #333;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: stretch;
+    /* 내용 가로폭 맞추기 */
+    text-align: center;
+}
+
+button {
+    background-color: #333;
+    width: 100px;
+    height: 50px;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #808080;
+}
+
+button:active {
+    background-color: #777;
+}
+
+.map {
+    border: none;
+    width: 100%;
+    height: 100%;
+}
+
+.btn_select {
+    background-color: #333;
+    width: 100px;
+    height: 50px;
+    color: #fff;
+}
+
+/* 태블릿 화면 (768px ~ 1024px) */
+@media screen and (max-width: 1024px) {
+    .select_options {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        padding: 0 20px;
+    }
+
+    select {
+        width: 200px;
+    }
+
+    .result_item {
+        flex: 1 1 45%;
+        margin: 10px;
+    }
+
+    .result_item img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+}
+
+/* 모바일 화면 (768px 이하) */
+@media screen and (max-width: 768px) {
+    header h1 {
+        font-size: 24px;
+        text-align: center;
+        padding: 15px 0;
+    }
+
+    .select_options {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        padding: 0 15px;
+    }
+
+    select {
+        width: 90%;
+        max-width: 300px;
+        height: 40px;
+        font-size: 16px;
+    }
+
+    .random {
+        text-align: center;
+        margin: 20px 0;
+    }
+
+    .result_container {
+        padding: 0 10px;
+    }
+
+    .result_item {
+        flex: 1 1 100%;
+        max-width: 100%;
+        margin: 10px 0;
+        padding: 15px;
+    }
+
+    .result_item .name {
+        font-size: 18px;
+    }
+
+    .result_item .address,
+    .result_item .category {
+        font-size: 14px;
+    }
+
+    .result_item img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 5px;
+    }
+
+    button {
+        width: 90%;
+        max-width: 300px;
+        height: 45px;
+        font-size: 16px;
+    }
+
+    .btn_select {
+        width: 90%;
+        max-width: 300px;
+        height: 45px;
+        margin: 10px auto;
+    }
+}
+
+/* 작은 모바일 화면 (480px 이하) */
+@media screen and (max-width: 480px) {
+    header h1 {
+        font-size: 20px;
+    }
+
+    .result_item {
+        padding: 10px;
+    }
+
+    .result_item img {
+        height: 150px;
+    }
+
+    .result_item .name {
+        font-size: 16px;
+    }
+
+    .result_item .address,
+    .result_item .category {
+        font-size: 12px;
+    }
+}

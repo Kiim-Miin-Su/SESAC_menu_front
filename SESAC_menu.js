@@ -6,7 +6,7 @@ const result_list = document.querySelector(".result_list");
 
 let selected_area = "";
 let selected_category = "";
-const url_base = "http://sesac_menu.pe.kr";
+const url_base = "https://sesac_menu.pe.kr";
 
 function renderItems(items) {
     // 이전 결과 비우기

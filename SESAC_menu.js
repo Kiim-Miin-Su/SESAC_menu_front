@@ -92,7 +92,7 @@ btn_random.addEventListener("click", async (e) => {
 
         // 단일 아이템 렌더 (기존 목록 유지하려면 append만)
         console.log(data);
-        renderItems([data]);
+        renderItems(data);
     } catch (err) {
         console.error("Error fetching random:", err);
         renderItems([]);

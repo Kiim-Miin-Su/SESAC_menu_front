@@ -8,6 +8,7 @@ let selected_area = "";
 let selected_category = "";
 const url_base = "https://sesac-menu.pe.kr";
 
+
 function renderItems(items) {
     // 이전 결과 비우기
     result_list.querySelectorAll(".result_item").forEach((item) => {

@@ -6,7 +6,7 @@ const result_list = document.querySelector(".result_list");
 
 let selected_area = "";
 let selected_category = "";
-const url_base = "http://172.31.99.114:8000";
+const url_base = "http://www.sesac_menu.com";
 
 function renderItems(items) {
     // 이전 결과 비우기
@@ -28,7 +28,7 @@ function renderItems(items) {
       <h3 class="name">${item.name}</h3>
       <p class="address">${item.addr}</p>
       <p class="category">${item.kind}${item.open ? " · 영업중" : ""}</p>
-      <img src="http://172.31.99.114:8000/photo/street?addr=${encodeURIComponent(item.addr)}" alt="음식점 이미지">
+      <img src="${url_base}/photo/street?addr=${encodeURIComponent(item.addr)}" alt="음식점 이미지">
       <button class="btn_select">선택</button>
     `;
         result_list.appendChild(li);

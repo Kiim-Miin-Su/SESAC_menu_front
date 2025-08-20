@@ -91,8 +91,11 @@ btn_random.addEventListener("click", async (e) => {
         const data = await resp.json(); // { name, open, addr, kind }
 
         // 단일 아이템 렌더 (기존 목록 유지하려면 append만)
-        console.log(data);
-        renderItems(data);
+        if (Array.isArray(data)) {
+            renderItems(data);
+        } else {
+            renderItems([data]);
+        }
     } catch (err) {
         console.error("Error fetching random:", err);
         renderItems([]);

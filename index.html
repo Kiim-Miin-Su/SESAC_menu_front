@@ -1,50 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./SESAC_menu.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>SESAC Menu</title>
+    <link rel="stylesheet" href="./SESAC_menu.css" />
 </head>
 
 <body>
     <header>
-        <h1>menu</h1>
+        <h1>🍱 SESAC Menu</h1>
     </header>
 
     <main>
-        <div class="select_options">
-            <select name="area" id="area">
-                <option value="강일">강일</option>
-                <option value="고덕">고덕</option>
-                <option value="천호">천호</option>
+        <section class="select_options" aria-label="검색 필터">
+            <select id="area" aria-label="지역">
+                <option value="">🌎 전체 지역</option>
+                <option value="상일">🏙️ 상일</option>
+                <option value="고덕">🏙️ 고덕</option>
+                <option value="천호">🏙️ 천호</option>
             </select>
-            <select name="category" id="category">
-                <option value="전체">전체</option>
-                <option value="한식">한식</option>
-                <option value="중식">중식</option>
-                <option value="일식">일식</option>
-                <option value="양식">양식</option>
-                <option value="etc">etc</option>
+
+            <select id="category" aria-label="카테고리">
+                <option value="전체">🧭 전체</option>
+                <option value="한">🍚 한식</option>
+                <option value="중">🥟 중식</option>
+                <option value="일">🍣 일식</option>
+                <option value="양">🍕 양식</option>
+                <option value="카페">☕️ 카페</option>
+                <option value="호프통닭">🍗🍺 호프/통닭</option>
+                <option value="etc">🍽️ 기타</option>
             </select>
-            <button id="search">검색</button>
-        </div>
 
+            <select id="distance" aria-label="거리">
+                <option value="300">📏 300m</option>
+                <option value="500" selected>📏 500m</option>
+                <option value="1000">📏 1km</option>
+                <option value="1500">📏 1.5km</option>
+                <option value="2000">📏 2km</option>
+            </select>
 
-        <div class="random">
-            <button id="random">랜덤</button>
-        </div>
+            <button id="search" type="button" title="검색">🔍 검색</button>
+            <button id="random" type="button" title="완전 랜덤">🎲 랜덤</button>
+        </section>
 
-        <div class="result_container">
-            <ul class="result_list">
+        <div class="meta" id="result_meta" aria-live="polite"></div>
 
-            </ul>
-        </div>
+        <section class="result_container">
+            <ul class="result_list" aria-live="polite"></ul>
 
-
+            <div class="actions">
+                <button id="load_more" type="button" title="더 보기">⬇️ 더 보기</button>
+            </div>
+        </section>
     </main>
-
 
     <script src="./SESAC_menu.js"></script>
 </body>
